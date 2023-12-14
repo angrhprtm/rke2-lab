@@ -1,0 +1,15 @@
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: anugerahpratama-id
+  namespace: default
+spec:
+  secretName: anugerahpratama-id-staging-tls
+  issuerRef:
+    name: letsencrypt-staging
+    kind: ClusterIssuer
+  commonName: "*.anugerahpratama.id"
+  dnsNames:
+  - "anugerahpratama.id"
+  - "*.anugerahpratama.id"
