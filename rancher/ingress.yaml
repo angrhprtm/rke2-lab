@@ -2,20 +2,20 @@
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  name: nginx
+  name: rancher
   namespace: default
-  annotations:
+  annotations: 
     kubernetes.io/ingress.class: traefik-external
 spec:
   entryPoints:
     - websecure
   routes:
-    - match: Host(`www.nginx.anugerahpratama.id`)
+    - match: Host(`www.rancher.anugerahpratama.id`)
       kind: Rule
       services:
-        - name: nginx
+        - name: rancher
           port: 80
-    - match: Host(`nginx.anugerahpratama.id`)
+    - match: Host(`rancher.anugerahpratama.id`)
       kind: Rule
       services:
         - name: nginx
